@@ -1,4 +1,4 @@
-import React from 'react'
+import GameGrid from '../../components/GameGrid';
 import Navbar from "../../components/Navbar";
 import { Container } from "./styles"
 
@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Navbar />
       <Container>
-
+        <GameGrid />
       </Container>
     </>
   )
