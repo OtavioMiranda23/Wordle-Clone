@@ -3,3 +3,8 @@ body {
   margin: 0;
   box-sizing: border-box;
 }
+
+h1 {
+  font-family: 'Suez One', times, serif;
+  font-weight: 600;
+}
