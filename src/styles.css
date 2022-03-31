@@ -16,4 +16,10 @@ body {
     as fontes padrão da Microsoft Instaladas (Courier New, Trebuchet),
     e assim não conseguem exibi-las.
   */
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: 'Suez One', times, serif;
+  font-weight: 600;
 }

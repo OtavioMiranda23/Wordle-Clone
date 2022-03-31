@@ -3,6 +3,7 @@ import { BiHelpCircle } from "react-icons/bi"
 import { GrBarChart } from "react-icons/gr"
 import { MdMenu } from "react-icons/md"
 import { FaCog } from "react-icons/fa"
+import { BiBarChartAlt2 } from "react-icons/bi"
 
 export default function Navbar() {
   return (
@@ -13,7 +14,7 @@ export default function Navbar() {
       </div>
       <Title>Wordle</Title>
       <div>
-        <GrBarChart />
+        <BiBarChartAlt2 />
         <FaCog />
       </div>
     </NavbarStyles>
