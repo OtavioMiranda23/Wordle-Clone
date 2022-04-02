@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.main`
-  margin: 0 auto;
   display: grid;
-  border: 1px solid #222;
+  border: 2px solid #222;
+  border-radius: 3px;
   grid-template-columns: repeat(5, 1fr); // A função 'repeat' literalmente só repete uma mesma informação várias vezes
   grid-template-rows: repeat(5, 1fr);
   /* 
