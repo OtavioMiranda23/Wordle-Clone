@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container } from "./styles";
 
 /**
@@ -20,18 +20,18 @@ import { Container } from "./styles";
 
 export default function GameGrid() {
 
-  const [ palavra, setPalavra ] = useState<string[]>([]);
+  const [ palavraAtual, setPalavraAtual ] = useState<string[]>([]);
 
-  const quebrada = "ROSEA".split(""); // ["R","O","S","E","A"]
+  const addKey = (key:string) => setPalavraAtual(state => state.length >= 5 ? state : [...state, key.toUpperCase()]);
+  const rmvKey = () => setPalavraAtual(state => state.slice(0, -1));
 
-  palavra.forEach(letra =>{
-    if(letra in quebrada) return "Letra está na palavra ideal"
-  })
-  
   function handleKey(evento:KeyboardEvent){
-    console.log(evento.key);
-    if(evento.key.length > 1) return;
-    setPalavra(state => [...state, evento.key.toUpperCase()])
+    /* Expressão regular (RegEx) simples pra identificar caracteres de A a Z */
+    if (/[a-z]/.test(evento.key) && evento.key.length === 1) addKey(evento.key); // adicionar a letra para a palavra
+    else{
+      // Lidar com outras teclas: Backspace, Enter
+      if(evento.key === "Backspace") return rmvKey(); // Se tiver apertado backspace, apagar a última letra
+    }
   }
 
   useEffect(() =>{
@@ -43,7 +43,7 @@ export default function GameGrid() {
 
   return (
     <Container>
-      { palavra.map(letra => <p>{letra}</p>) }
+      { palavraAtual.map(letra => <p>{letra}</p>) }
     </Container>
   )
 }

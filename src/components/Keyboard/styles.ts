@@ -16,6 +16,7 @@ export const Container = styled.div`
         background-color: Gainsboro;
         border-radius: 5px;
         border: 0;
+        min-width: 3.2rem;
     }
 
 `;
@@ -25,8 +26,5 @@ export const Fileira = styled.div`
     display: flex;
     gap: 5px;
     align-items: center;
-    justify-content: center;
-    
-    
+    justify-content: center;  
 `;
-
