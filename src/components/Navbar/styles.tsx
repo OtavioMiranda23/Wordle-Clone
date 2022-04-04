@@ -16,6 +16,11 @@ export const NavbarStyles = styled.nav`
     width: 57px;
     justify-content: space-between;    
   }
+
+  h1 {
+  font-family: 'Suez One', times, serif;
+  font-weight: 600;
+}
 `;
 
 export const Title = styled.h1`
