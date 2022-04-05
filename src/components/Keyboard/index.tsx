@@ -1,7 +1,14 @@
 import { Container, Fileira } from "./styles";
-import { BsBackspace } from "react-icons/bs"
+import { BsBackspace } from "react-icons/bs";
 
-export function Keyboard() {
+
+interface KeyboardProps{
+  addKey: (tecla:string) => void;
+}
+
+export function Keyboard(props:KeyboardProps) {
+
+
   const fileira1 = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'];
   const fileira2 = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'];
   const fileira3 = ['ENTER', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'];
@@ -9,7 +16,7 @@ export function Keyboard() {
   return (
     <Container>
       <Fileira>
-        {fileira1.map(tecla => <button>{tecla}</button>)}
+        {fileira1.map(tecla => <button onClick={() => props.addKey(tecla)}>{tecla}</button>)}
       </Fileira>
 
       <Fileira>

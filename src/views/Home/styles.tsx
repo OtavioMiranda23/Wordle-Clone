@@ -6,6 +6,7 @@ export const Container = styled.main`
   align-items: center;
   justify-content: center;
   height: calc(100vh - 51px);
+  /* position: relative; */
   /* 
     A funçao 'calc' serve pra que o css
     consiga calcular valores a partir de medidas dinâmicas
