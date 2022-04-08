@@ -5,11 +5,13 @@ import { MdMenu } from "react-icons/md"
 import { FaCog } from "react-icons/fa"
 import { BiBarChartAlt2 } from "react-icons/bi"
 
+
 export default function Navbar() {
+  
   return (
     <NavbarStyles>
       <div>
-        <MdMenu />
+        <MdMenu/>
         <BiHelpCircle />
       </div>
       <Title>Wordle</Title>
