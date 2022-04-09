@@ -3,7 +3,7 @@ import GameGrid from '../../components/GameGrid';
 import { Keyboard } from '../../components/Keyboard';
 import Navbar from "../../components/Navbar";
 import Sidebar from '../../components/Sidebar';
-import { Container } from "./styles"
+import { Container, GameWrapper } from "./styles"
 
 enum TeclaState {
   existe,
@@ -12,17 +12,17 @@ enum TeclaState {
 }
 
 export default function Home() {
-  const [ palavraAtual, setPalavraAtual ] = useState<string[]>([]);
+  const [ palavraAtual, setPalavraAtual ] = useState<string>(""); // Mudei o state pra ser uma palavra ao invés de um Array de palavras
 
-  const addKey = (key:string) => setPalavraAtual(state => state.length >= 5 ? state : [...state, key.toUpperCase()]);
+  const addKey = (key:string) => setPalavraAtual(state => state.length >= 5 ? state : state + key.toUpperCase());
   const rmvKey = () => setPalavraAtual(state => state.slice(0, -1));
 
   function handleKey(evento:KeyboardEvent){
     /* Expressão regular (RegEx) simples pra identificar caracteres de A a Z */
-    if (/[a-z]/.test(evento.key) && evento.key.length === 1) addKey(evento.key); // adicionar a letra para a palavra
+    if (/[a-z A-Z]/.test(evento.key) && evento.key.length === 1) addKey(evento.key);
     else{
       // Lidar com outras teclas: Backspace, Enter
-      if(evento.key === "Backspace") return rmvKey(); // Se tiver apertado backspace, apagar a última letra
+      if(evento.key === "Backspace") return rmvKey();
     }
   }
 
@@ -37,8 +37,10 @@ export default function Home() {
     <>
       <Navbar />
       <Container>
-        <GameGrid palavraAtual={palavraAtual}/>
-        <Keyboard addKey={addKey}/>
+        <GameWrapper>
+          <GameGrid palavraAtual={palavraAtual}/>
+          <Keyboard addKey={addKey} rmvKey={rmvKey}/>
+        </GameWrapper>
         <Sidebar/>
       </Container>
     </>

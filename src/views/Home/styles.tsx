@@ -19,3 +19,10 @@ export const Container = styled.main`
     os 51px de altura da nossa Navbar
   */
 `;
+
+export const GameWrapper = styled.section`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+`;

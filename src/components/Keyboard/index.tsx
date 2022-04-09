@@ -4,6 +4,7 @@ import { BsBackspace } from "react-icons/bs";
 
 interface KeyboardProps{
   addKey: (tecla:string) => void;
+  rmvKey: () => void;
 }
 
 export function Keyboard(props:KeyboardProps) {
@@ -20,12 +21,12 @@ export function Keyboard(props:KeyboardProps) {
       </Fileira>
 
       <Fileira>
-        {fileira2.map(tecla => <button>{tecla}</button>)}
+        {fileira2.map(tecla => <button onClick={() => props.addKey(tecla)}>{tecla}</button>)}
       </Fileira>
 
       <Fileira>
-        {fileira3.map(tecla => <button>{tecla}</button>)}
-        <button><BsBackspace/></button>
+        {fileira3.map(tecla => <button onClick={() => props.addKey(tecla)}>{tecla}</button>)}
+        <button onClick={() => props.rmvKey()}><BsBackspace/></button>
       </Fileira>
 
     </Container>
