@@ -1,3 +1,4 @@
+import Word from "../Word";
 import { Container } from "./styles";
 
 /**
@@ -17,14 +18,18 @@ import { Container } from "./styles";
 */
 
 interface GameGridProps {
-  palavraAtual: string[]
+  palavraAtual: string
 } 
 
-export default function GameGrid(props: GameGridProps) {
-  
+export default function GameGrid({palavraAtual}: GameGridProps) {
   return (
     <Container>
-      { props.palavraAtual.map(letra => <p>{letra}</p>) }
+      <Word word={"ROSEA"}/>
+      <Word word={palavraAtual}/>
+      <Word/>
+      <Word/>
+      <Word/>
+      <Word/>
     </Container>
   )
 }

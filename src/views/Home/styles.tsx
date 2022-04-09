@@ -18,6 +18,7 @@ export const Container = styled.main`
     deve ocupar toda a altura da tela (100vh) menos
     os 51px de altura da nossa Navbar
   */
+<<<<<<< HEAD
  .Teste {
     //border: 1px magenta solid;
     position: absolute;
@@ -31,3 +32,13 @@ export const Container = styled.main`
  }
 `;
 
+=======
+`;
+
+export const GameWrapper = styled.section`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+>>>>>>> a665f5df37c6a6b679503b1cee2e69570bdcf505
