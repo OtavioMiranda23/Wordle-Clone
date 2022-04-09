@@ -35,7 +35,7 @@ export default function Home() {
     }
   }, [])
 
-  //Adiciona o componente sidebar:
+  //Adiciona a lógica sidebar:
 
   const [sidebar, setSidebar] = useState(false);
 
@@ -45,6 +45,7 @@ export default function Home() {
     document.addEventListener("mousedown", (event:any) => {
       if (!menuRef.current.contains(event.target)) { 
       setSidebar(false);
+      console.log(sidebar)
     }})
   });
 
@@ -54,19 +55,13 @@ export default function Home() {
     <>
       <Navbar handleClick={() => setSidebar(true)}/>
       <Container>
-<<<<<<< HEAD
-        <GameGrid palavraAtual={palavraAtual}/>
-        <Keyboard addKey={addKey}/>
-        {sidebar && <Sidebar/>}
-        <div className="Teste" ref={menuRef} ></div>
-        
-=======
         <GameWrapper>
+          {sidebar && <Sidebar/>}
+          {/* Div que permite fechar o componente */}
+        <div className="Teste" ref={menuRef} ></div> 
           <GameGrid palavraAtual={palavraAtual}/>
           <Keyboard addKey={addKey} rmvKey={rmvKey}/>
         </GameWrapper>
-        <Sidebar/>
->>>>>>> a665f5df37c6a6b679503b1cee2e69570bdcf505
       </Container>
     </>
   )

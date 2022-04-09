@@ -4,12 +4,11 @@ import { GrBarChart } from "react-icons/gr"
 import { MdMenu } from "react-icons/md"
 import { FaCog } from "react-icons/fa"
 import { BiBarChartAlt2 } from "react-icons/bi"
-import { useState } from "react"
-import Sidebar from "../Sidebar"
+
 
 
 interface INavbar{
-  handleClick: () => void;
+  handleClick: () => any;
 }
 
 
