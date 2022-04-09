@@ -18,4 +18,16 @@ export const Container = styled.main`
     deve ocupar toda a altura da tela (100vh) menos
     os 51px de altura da nossa Navbar
   */
+ .Teste {
+    //border: 1px magenta solid;
+    position: absolute;
+    height: calc(100vh - 13rem);
+    width: 20vw;
+    left: 0px;
+    top:10rem;
+    z-index: 0;
+
+
+ }
 `;
+

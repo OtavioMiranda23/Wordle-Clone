@@ -6,7 +6,11 @@ import { MdGridOn } from "react-icons/md"
 import { CgCardDiamonds } from "react-icons/cg"
 import { SiAcademia } from "react-icons/si"
 
+
+
 export default function Sidebar() {
+
+
   return (
     <Container>
       <div className="box">
@@ -20,10 +24,14 @@ export default function Sidebar() {
       <div className="corpo">        
         <div className="contentGames">
           <div><GiBee/></div>          
-          <div><p>Spelling Bee</p></div>
+            <a href="https://www.nytimes.com/puzzles/spelling-bee?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav">
+              <div><p>Spelling Bee</p></div>
+            </a>
 
           <div><MdGridOn/></div>
-          <div><p>The Crossword</p></div>
+            <a href="https://www.nytimes.com/crosswords/game/daily?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav">
+              <div><p>The Crossword</p></div>
+            </a>
 
           <div><CgCardDiamonds/></div>
           <div><p>The Mini</p></div>

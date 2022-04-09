@@ -4,14 +4,21 @@ import { GrBarChart } from "react-icons/gr"
 import { MdMenu } from "react-icons/md"
 import { FaCog } from "react-icons/fa"
 import { BiBarChartAlt2 } from "react-icons/bi"
+import { useState } from "react"
+import Sidebar from "../Sidebar"
 
 
-export default function Navbar() {
-  
+interface INavbar{
+  handleClick: () => void;
+}
+
+
+export default function Navbar(prop:INavbar) {
   return (
+
     <NavbarStyles>
       <div>
-        <MdMenu/>
+        <MdMenu onClick={()=> prop.handleClick()}/>        
         <BiHelpCircle />
       </div>
       <Title>Wordle</Title>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import GameGrid from '../../components/GameGrid';
 import { Keyboard } from '../../components/Keyboard';
 import Navbar from "../../components/Navbar";
@@ -10,6 +10,8 @@ enum TeclaState {
   existe_posErrada,
   nao_existe
 }
+
+
 
 export default function Home() {
   const [ palavraAtual, setPalavraAtual ] = useState<string[]>([]);
@@ -33,13 +35,30 @@ export default function Home() {
     }
   }, [])
 
+  //Adiciona o componente sidebar:
+
+  const [sidebar, setSidebar] = useState(false);
+
+  const menuRef = useRef<HTMLDivElement>(null!)
+
+  useEffect(()=> {
+    document.addEventListener("mousedown", (event:any) => {
+      if (!menuRef.current.contains(event.target)) { 
+      setSidebar(false);
+    }})
+  });
+
+
+
   return (
     <>
-      <Navbar />
+      <Navbar handleClick={() => setSidebar(true)}/>
       <Container>
         <GameGrid palavraAtual={palavraAtual}/>
         <Keyboard addKey={addKey}/>
-        <Sidebar/>
+        {sidebar && <Sidebar/>}
+        <div className="Teste" ref={menuRef} ></div>
+        
       </Container>
     </>
   )
