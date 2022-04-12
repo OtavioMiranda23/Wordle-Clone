@@ -1,10 +1,10 @@
-// import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 
 export enum LetterState{
   empty = "EMPTY",
   default = "DEFAULT",
   wrongPos = "WRONG_POS",
-  rightPos = "RIGHT_POS",
+  rightPos = "RIGHT_POS", 
 }
 
 export interface Letter {

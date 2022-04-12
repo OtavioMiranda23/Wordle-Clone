@@ -25,9 +25,9 @@ export default function GameGrid({palavraAtual}: GameGridProps) {
   return (
     <Container>
       <Word word={"ROSEA"}/>
+      <Word word={"PODER"}/>
+      <Word word={"BALAO"}/>
       <Word word={palavraAtual}/>
-      <Word/>
-      <Word/>
       <Word/>
       <Word/>
     </Container>

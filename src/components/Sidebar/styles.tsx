@@ -1,5 +1,37 @@
 import styled from "styled-components";
 
+
+export const Box = styled.div`
+  //border: 1px magenta solid;
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  padding-bottom: 1rem ;
+
+`;
+
+export const GameLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  /* border: 1px solid magenta; */
+  padding: 0.5rem 1rem;
+  z-index: 10;
+  transition: all 300ms ease;
+
+  &:hover{
+    background-color: #333;
+    color: #fff;
+    transition: all 300ms ease;
+  }
+`;
+
+export const ContentGames = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2rem;
+`;
+
 export const Container = styled.div`
   //border: 1px magenta solid;
 
@@ -8,7 +40,7 @@ export const Container = styled.div`
   width: 20vw;
   left: 0px;
   top:51px;
-  z-index: 1;
+  
 
   box-shadow: 0.1px 15px 10px rgba(148, 148, 148, 0.582);
 
@@ -18,7 +50,7 @@ export const Container = styled.div`
     align-items: center;
     margin: 1rem;
     padding-bottom: 1rem ;
-    z-index: 7;
+
 
     
   }
@@ -27,7 +59,7 @@ export const Container = styled.div`
     //border: 1px magenta solid;
     text-decoration: none;
     color: inherit;
-    z-index: 7;
+
   }
 
   .icon {
@@ -43,7 +75,7 @@ export const Container = styled.div`
     flex-grow: 2;
     font-size: 13px;
     font-family: 'Suez One', times, serif;
-    z-index: 1;
+
 
 
   }
@@ -68,7 +100,7 @@ export const Container = styled.div`
     padding-bottom: 2rem;
     border-bottom: 1px solid lightgray ;
     align-items: center;
-    z-index: 1;
+
 
   }
 
@@ -82,7 +114,7 @@ export const Container = styled.div`
     border-bottom: 1px solid lightgray ;
     align-items: center;
     grid-row-gap: 1rem;
-    z-index: 1;
+
 
 
   }
@@ -91,8 +123,8 @@ export const Container = styled.div`
 
   .corpo {
     //border: 1px magenta solid;
-    margin: 1rem;
-    z-index: 1;
+    /* margin: 1rem; */
+
 
   } 
 

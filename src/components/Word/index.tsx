@@ -9,13 +9,13 @@ interface WordProps {
 
 export default function Word({word}: WordProps) {
 
-  const splitted = word?.split("");                             // Dividindo a palavra em um array
-  let toShow:string[] = Array(5).fill("");                      // Criando um array com exatamente 5 strings vazias ("")
+  const splitted = word?.split("");                         // Dividindo a palavra em um array
+  let toShow:string[] = Array(5).fill("");                  // Criando um array com exatamente 5 strings vazias ("")
   splitted?.forEach((letter, index) => toShow[index] = letter)  // Pra cada letra da palavra, substituir ela no índice equivalente no array com strings vazias
 
   return (
     <Container>
-      {toShow.map(c => <Letter letter={c} state={LetterState.default}/>)}
+      {toShow.map(c => <Letter letter={c} state={LetterState.rightPos}/>)}
     </Container>
   )
 }

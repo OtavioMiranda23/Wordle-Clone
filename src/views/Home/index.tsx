@@ -12,7 +12,6 @@ enum TeclaState {
 }
 
 
-
 export default function Home() {
   const [ palavraAtual, setPalavraAtual ] = useState<string>(""); // Mudei o state pra ser uma palavra ao invés de um Array de palavras
 
@@ -38,27 +37,33 @@ export default function Home() {
   //Adiciona a lógica sidebar:
 
   const [sidebar, setSidebar] = useState(false);
-
   const menuRef = useRef<HTMLDivElement>(null!)
 
-  useEffect(()=> {
-    document.addEventListener("mousedown", (event:any) => {
-      if (!menuRef.current.contains(event.target)) { 
+  function handleSideMenuClick(event:any){
+
+    // menuRef.current.contains(event.target as Element) ? console.log("Dentro da div") : console.log("Fora da div");
+    
+    if (!menuRef.current.contains(event.target as Element)) {
+      console.log("Fora do sidebar")
       setSidebar(false);
       console.log(sidebar)
-    }})
-  });
-
-
-
+    }
+  }
+    
+  useEffect(()=> {
+    document.addEventListener("mousedown", handleSideMenuClick)
+    return () => {
+      window.removeEventListener("mousedown", handleSideMenuClick )
+    }
+  }, []);
+  
   return (
     <>
-      <Navbar handleClick={() => setSidebar(true)}/>
+      <Navbar handleClickMenu={() => setSidebar(s => !s)}/>
       <Container>
         <GameWrapper>
-          {sidebar && <Sidebar/>}
+          {sidebar && <div ref={menuRef}><Sidebar /></div>}
           {/* Div que permite fechar o componente */}
-        <div className="Teste" ref={menuRef} ></div> 
           <GameGrid palavraAtual={palavraAtual}/>
           <Keyboard addKey={addKey} rmvKey={rmvKey}/>
         </GameWrapper>

@@ -25,7 +25,7 @@ export const Container = styled.main`
     width: 20vw;
     left: 0px;
     top:10rem;
-    z-index: 0;
+    z-index: 9;
 
 
  }
