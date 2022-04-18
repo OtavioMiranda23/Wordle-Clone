@@ -28,4 +28,9 @@ export const Title = styled.h1`
 
 `;
 
+export const Content = styled.div`
+border: 1px magenta solid;
+
+display: flex;
+`;
 

@@ -14,22 +14,26 @@ export const GameLink = styled.a`
   display: flex;
   align-items: center;
   gap: 1rem;
-  /* border: 1px solid magenta; */
+  //border: 1px solid magenta;
   padding: 0.5rem 1rem;
   z-index: 10;
-  transition: all 300ms ease;
+  transition: all 100ms ease;
 
   &:hover{
-    background-color: #333;
-    color: #fff;
-    transition: all 300ms ease;
+    background-color: rgba(100, 100, 100, 0.1);
+    transition: all 100ms ease;
   }
 `;
 
 export const ContentGames = styled.div`
   display: flex;
   flex-direction: column;
-  padding-bottom: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  & :nth-child(5) {
+    border-bottom: 1px solid lightgray;
+  }
+  
 `;
 
 export const Container = styled.div`
